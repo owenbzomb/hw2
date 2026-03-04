@@ -27,7 +27,7 @@ void run(int argc, char* argv[]){
         unique.insert(c);
     }
 
-    cout << "Unique characters: " << unique.size() << "\n";
+    cout << "Unique: " << unique.size() << "\n";
 
     bool alnum = true;
 
@@ -38,16 +38,16 @@ void run(int argc, char* argv[]){
     }
 
     if(alnum){
-        cout << "Alphanumeric only\n";
+        cout << "Alphanumeric: Yes\n";
     }
     else{
-        cout << "Not alphanumeric\n";
+        cout << "Alphanumeric: No\n";
     }
 
     string reversed_str = "";
 
-    for(int i = str.size()-1; i >= 0; i--){
-        reversed_str += str[i];
+    for(size_t i = str.size(); i > 0; i--){
+        reversed_str += str[i-1];
     }
 
     cout << "Reversed: " << reversed_str << "\n";
@@ -61,20 +61,25 @@ void run(int argc, char* argv[]){
 
     cout << "Without spaces: " << no_spaces << "\n";
 
-    string lowercase = str;
+    string lowercase = "";
 
-    for(char &c : lowercase){
-        c = std::tolower(c);
+    for(char c : str){
+        if(!std::isspace(c))
+            lowercase += std::tolower(c);
     }
 
-    for(char &c : reversed_str){
-    c = std::tolower(c);
+    string reversed = "";
+
+    for(size_t i = lowercase.size(); i > 0; i--){
+        reversed += lowercase[i-1];
     }
 
-    if(lowercase == reversed_str)
-        cout << "Palindrome\n";
-    else
-        cout << "Not palindrome\n";
+    if(lowercase == reversed){
+        cout << "Palindrome: Yes\n";
+    }
+    else{
+        cout << "Palindrome: No\n";
+    }
 
 }
 }

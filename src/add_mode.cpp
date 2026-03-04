@@ -35,7 +35,7 @@ void run(int argc, char* argv[]){
         double x = std::stod(a);
         double y = std::stod(b);
 
-        cout << "Result: " << add(x,y) << "\n";
+        cout << "Result: " << std::to_string(add(x,y)) << "\n";
     }
 
     else if(std::isdigit(a[0]) && std::isdigit(b[0])){
@@ -43,7 +43,7 @@ void run(int argc, char* argv[]){
         int x = std::stoi(a);
         int y = std::stoi(b);
 
-        cout << "Result: " << add(x,y) << "\n";
+        cout << "Result: " << std::to_string(add(x,y)) << "\n";
     }
 
     else{

@@ -44,19 +44,19 @@ void run(int argc, char* argv[]){
         upper[i] = std::toupper(upper[i]);
     }
 
-    cout << "Uppercase copy: " << upper << "\n";
+    cout << "Uppercase: " << upper << "\n";
 
     for(size_t i = 0; i < str.size(); i++){
         str[i] = std::tolower(str[i]);
     }
 
-    cout << "Lowercase original: " << str << "\n";
+    cout << "Lowercase: " << str << "\n";
 
     if(str.find("test") != string::npos){
-        cout << "Contains test\n";
+        cout << "Contains test: Yes\n";
     }
     else{
-        cout << "Does not contain test\n";
+        cout << "Contains test: No\n";
     }
 
     size_t pos = str.find(' ');
